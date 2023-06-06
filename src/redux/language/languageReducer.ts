@@ -20,7 +20,6 @@ export default (state = defaultState, action: LanguageActionTypes) => {
   switch (action.type) {
     case CHANGE_LANGUAGE:
       i18n.changeLanguage(action.payload); //这样处理是不标准的，有副作用
-
       return { ...state, language: action.payload };
     case ADD_LANGUAGE:
       return { ...state, languageList: [...state.languageList, action.payload] };

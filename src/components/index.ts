@@ -3,4 +3,5 @@ export * from './footer';
 export * from './carousel';
 export * from './sideMenu';
 export * from './productCollection';
-export * from './businessPartner'
+export * from './businessPartner';
+export * from './productIntro';

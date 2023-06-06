@@ -23,8 +23,8 @@ import { Dispatch } from "redux";
 // 数据的流入
 const mapStateToProps = (state: RootState) => {
   return {
-    language: state.language,
-    languageList: state.languageList,
+    language: state.language.language,
+    languageList: state.language.languageList,
   }
 }
 
