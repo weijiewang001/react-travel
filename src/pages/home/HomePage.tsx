@@ -12,6 +12,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { RootState } from "../../redux/store";
 import { giveMeDataActionCreator } from "../../redux/recommendProducts/recommendProductsActions"
+import { MainLayout } from "../../layouts/mainLayout"
 
 // interface State {
 //   loading: boolean,
@@ -73,6 +74,7 @@ class HomePageComponent extends React.Component<PropsType> {
 
   render() {
     // console.log(this.props.t)
+
     const { t, productList, loading, error } = this.props;
     if (loading) {
       return <Spin
@@ -91,38 +93,37 @@ class HomePageComponent extends React.Component<PropsType> {
     }
     // console.log(this.props.navigate)
     return <>
-      <Header />
-      {/* 页面内容 content */}
-      <div className={styles['page-content']}>
-        <Row style={{ marginTop: 20 }}>
-          <Col span={6}>
-            <SideMenu />
-          </Col>
-          <Col span={18}>
-            <Carousel />
-          </Col>
-        </Row>
-        <ProductCollection
-          title={<Typography.Title level={3} type="warning">{t("home_page.hot_recommended")}</Typography.Title>}
-          sideImage={sideImage}
-          products={productList[0].touristRoutes}
-        />
-        <ProductCollection
-          title={<Typography.Title level={3} type="danger">{t("home_page.new_arrival")}</Typography.Title>}
-          sideImage={sideImage2}
-          products={productList[1].touristRoutes}
-        />
-        <ProductCollection
-          title={<Typography.Title level={3} type="success">{t("home_page.domestic_travel")}</Typography.Title>}
-          sideImage={sideImage3}
-          products={productList[2].touristRoutes}
-        />
-        <BusinessPartner />
+      <MainLayout>
+        {/* 页面内容 content */}
+        <div className={styles['page-content']}>
+          <Row style={{ marginTop: 20 }}>
+            <Col span={6}>
+              <SideMenu />
+            </Col>
+            <Col span={18}>
+              <Carousel />
+            </Col>
+          </Row>
+          <ProductCollection
+            title={<Typography.Title level={3} type="warning">{t("home_page.hot_recommended")}</Typography.Title>}
+            sideImage={sideImage}
+            products={productList[0].touristRoutes}
+          />
+          <ProductCollection
+            title={<Typography.Title level={3} type="danger">{t("home_page.new_arrival")}</Typography.Title>}
+            sideImage={sideImage2}
+            products={productList[1].touristRoutes}
+          />
+          <ProductCollection
+            title={<Typography.Title level={3} type="success">{t("home_page.domestic_travel")}</Typography.Title>}
+            sideImage={sideImage3}
+            products={productList[2].touristRoutes}
+          />
+          <BusinessPartner />
 
-      </div>
-      <Footer />
+        </div>
 
-
+      </MainLayout>
     </>;
   }
 }

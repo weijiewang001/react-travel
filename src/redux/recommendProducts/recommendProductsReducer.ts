@@ -1,5 +1,9 @@
 import { RecommendProductAction } from "./recommendProductsActions";
-import { FETCH_RECOMMEND_PRODUCTS_START, FETCH_RECOMMEND_PRODUCTS_SUCCESS, FETCH_RECOMMEND_PRODUCTS_FAIL } from "./recommendProductsActions";
+import {
+  FETCH_RECOMMEND_PRODUCTS_START,
+  FETCH_RECOMMEND_PRODUCTS_SUCCESS,
+  FETCH_RECOMMEND_PRODUCTS_FAIL
+} from "./recommendProductsActions";
 
 
 interface RecommendProductsState {
